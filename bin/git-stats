@@ -152,15 +152,11 @@ new Tilda(`${__dirname}/../package.json`, {
         Logger.log("Invalid end date. Using default instead (" + options.end.format("LL") + ").", "warn");
     }
 
-    // Add the repo path
-    if (authorsOpt.is_provided || globalActivityOpt.is_provided) {
-        options.repo = process.cwd();
-    }
-
     // Handle authors
     if (authorsOpt.is_provided) {
         options.no_ansi = noAnsiOpt.is_provided;
         options.radius = (process.stdout.rows / 2) - 4;
+        options.start = sinceDateOpt.value;
     }
 
     if (!authorsOpt.is_provided || globalActivityOpt.is_provided) {
