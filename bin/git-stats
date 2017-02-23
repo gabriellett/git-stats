@@ -157,6 +157,7 @@ new Tilda(`${__dirname}/../package.json`, {
         options.no_ansi = noAnsiOpt.is_provided;
         options.radius = (process.stdout.rows / 2) - 4;
         options.start = sinceDateOpt.value;
+        options.end = untilDateOpt.value;
     }
 
     if (!authorsOpt.is_provided || globalActivityOpt.is_provided) {
